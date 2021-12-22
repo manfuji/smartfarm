@@ -11,9 +11,9 @@ export default function StackNavigator() {
     <stack.Navigator>
      
         <>
+          <stack.Screen name="Dashboard" component={Dashboard} />
           <stack.Screen name="Login" component={Login} />
           <stack.Screen name="Register" component={Register} />
-          <stack.Screen name="Dashboard" component={Dashboard} />
         <stack.Screen name="Disease" component={Pictures} />
 
         </>

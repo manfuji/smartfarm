@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Modal, Text, TouchableOpacity, View, Image } from "react-native";
 import { Camera } from "expo-camera";
 import { Button } from "react-native-paper";
-import tw from "tailwind-rn"
-import axios from "axios";
+import tw from "tailwind-rn";
+// import * as cvstfjs from "@microsoft/customvision-tfjs";
+// import imodel from "../models/model.json";
 
 export const CameraModule = (props) => {
   const [cameraRef, setCameraRef] = useState(null);
@@ -109,8 +110,6 @@ export const CameraModule = (props) => {
   );
 };
 
-
-
 export default function ImagePickerExample() {
   const [image, setImage] = useState(null);
   const [camera, setShowCamera] = useState(false);
@@ -128,61 +127,44 @@ export default function ImagePickerExample() {
     return <Text>No access to camera</Text>;
   }
 
-  const UploadImage =()=>{
-    const url = "https://smartfarmhturobotics-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/80ae1af6-f507-446f-80b8-e64c4200a4d4/classify/iterations/Iteration1/image"
-   const config = {
-     headers:{
-       "Prediction-Key":"3171926ac7e04c99a49627da4d91bcb7",
-       "Content-Type":"application/octet-stream"
-     }
+  // const model = new cvstfjs.ObjectDetectionModel();
+  // await model.loadModelAsync(imodel);
+  // const Imageresult = await model.executeAsync(image);
 
-   }
-   const body ={
-     image
-   }
-    axios.post(url,body,config)
-    .then(res=>{
-      console.log(res.data)
-    }).catch(err=>{
-      console.log(err.message)
-    })
-  }
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View
         style={{
           backgroundColor: "blue",
-          width: 120,
-          height: 120,
+          width: 100,
+          height: 100,
           borderRadius: 100,
           marginBottom: 8,
         }}
       >
         <Image
           source={{ uri: image }}
-          style={{ width: 200, height: 200, borderRadius: 100 }}
+          style={{ width: 100, height: 100, borderRadius: 100 }}
         />
       </View>
       <View style={tw("flex")}>
-
-      <Button
-        style={{ width: "30%", marginTop: 16 }}
-        icon="camera"
-        mode="contained"
-        onPress={() => {
-          setShowCamera(true);
-        }}
-      >
-        Camera
-      </Button>
-      <Button
-        style={{ width: "30%", marginTop: 16 }}
-        icon="file"
-        
-        onPress={UploadImage}
-      >
-        Upload
-      </Button>
+        <Button
+          style={{ width: "30%", marginTop: 16 }}
+          icon="camera"
+          mode="contained"
+          onPress={() => {
+            setShowCamera(true);
+          }}
+        >
+          Camera
+        </Button>
+        <Button
+          style={{ width: "30%", marginTop: 16 }}
+          icon="file"
+          onPress={() => alert("hekko")}
+        >
+          Upload
+        </Button>
       </View>
       {camera && (
         <CameraModule
