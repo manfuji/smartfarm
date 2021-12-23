@@ -34,8 +34,8 @@ export default function Disease() {
             Compartment One
           </Text>
           <Text style={tw(textstyle)}>Soil Moisture: </Text><Text style={tw(textstyle2)}>{retnum1}</Text>
-          <Text style={tw(textstyle)}>Humidity: </Text><Text style={tw(textstyle2)}>{retnum2}</Text>
-          <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text>
+          <Text style={tw(textstyle)}>Action: </Text>{retnum1<600?<Text style={tw(textstyle2)}>Plant Moisture is in Good sharp </Text>:<Text style={tw(textstyle2)}>Plant needs water</Text>}
+          {/* <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text> */}
         </View>
       </View>
 
@@ -44,9 +44,9 @@ export default function Disease() {
           <Text style={tw("font-bold text-3xl uppercase pb-4 text-center text-gray-700")}>
             Compartment Two
           </Text>
-          <Text style={tw(textstyle)}>Soil Moisture: </Text><Text style={tw(textstyle2)}>{retnum1}</Text>
-          <Text style={tw(textstyle)}>Humidity: </Text><Text style={tw(textstyle2)}>{retnum2}</Text>
-          <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text>
+          <Text style={tw(textstyle)}>Humidity: </Text><Text style={tw(textstyle2)}>{retnum1}</Text>
+          <Text style={tw(textstyle)}>Action: </Text>{retnum2<600?<Text style={tw(textstyle2)}>Plant Humidity is in Good sharp </Text>:<Text style={tw(textstyle2)}>Plant needs water</Text>}
+          {/* <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text> */}
         </View>
       </View>
       <View style={tw("flex-1 m-10 bg-white h-64 py-10 rounded mt-8 pt-10 opacity-90")}>
@@ -54,9 +54,9 @@ export default function Disease() {
           <Text style={tw("font-bold text-3xl uppercase pb-4 text-center text-gray-700")}>
             Compartment Three
           </Text>
-          <Text style={tw(textstyle)}>Soil Moisture: </Text><Text style={tw(textstyle2)}>{retnum1}</Text>
-          <Text style={tw(textstyle)}>Humidity: </Text><Text style={tw(textstyle2)}>{retnum2}</Text>
-          <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text>
+          <Text style={tw(textstyle)}>Temperature: </Text><Text style={tw(textstyle2)}>{retnum3}</Text>
+          <Text style={tw(textstyle)}>Action: </Text>{retnum3>35?<Text style={tw(textstyle2)}>Plant Temperature is in Good sharp </Text>:<Text style={tw(textstyle2)}>Plant needs water</Text>}
+          {/* <Text style={tw(textstyle)}>Temperature:</Text><Text style={tw(textstyle2)}> {retnum3}</Text> */}
         </View>
       </View>
       </ScrollView>
