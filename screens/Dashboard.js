@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect } from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -16,7 +16,9 @@ import { authentication } from "../firebaseConf";
 import water from "../assets/icons/waterdrop.png";
 import disease from "../assets/icons/virus.png";
 import chat from "../assets/icons/chat.png";
-
+import temp from "../assets/icons/temp.png";
+import btn from "../assets/icons/btn.png";
+import rain from "../assets/icons/rain.jpg"
 
 export default function Dashboard() {
   const navigation = useNavigation();
@@ -41,7 +43,7 @@ export default function Dashboard() {
               >
                 <View style={tw("flex font-semibold")}>
                   <Image
-                    source={water}
+                    source={rain}
                     style={{
                       width: 100,
                       height: 100,
@@ -82,7 +84,7 @@ export default function Dashboard() {
               >
                 <View style={tw("flex text-white font-semibold")}>
                   <Image
-                    source={water}
+                    source={temp}
                     style={{
                       width: 100,
                       height: 100,
@@ -145,7 +147,7 @@ export default function Dashboard() {
               >
                 <View style={tw("flex text-white font-semibold")}>
                   <Image
-                    source={water}
+                    source={btn}
                     style={{
                       width: 100,
                       height: 100,
